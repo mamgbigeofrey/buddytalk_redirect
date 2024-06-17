@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OAuth Redirect</title>
+    <script type="text/javascript">
+        function redirect() {
+            // Extract the code or token from the URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const code = urlParams.get('code');
+
+            // Redirect to your custom scheme with the code
+            window.location.href = `buddytalk://callback?code=${code}`;
+        }
+    </script>
+</head>
+<body onload="redirect()">
+    Redirecting...
+</body>
+</html>
